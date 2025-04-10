@@ -19,4 +19,25 @@ public class MovieManager
     Enter rating (out of 10): 8.8
     Movie added successfully!
     */ 
+   public static void main(String [] args)
+   {
+        Scanner scanner = new Scanner(System.in);
+        MovieCollection movieCollection = new MovieCollection();
+        int choice = 0;
+
+        while (choice != 5)
+        {
+            choice = Integer.parseInt(scanner.nextLine());
+        }
+   }
+
+   public static void writeOptions()
+   {
+        System.out.println("Welcome to the Movie Manager!");
+        System.out.println("1. add a movie");
+        System.out.println("2. remove a movie");
+        System.out.println("Search for a movie");
+        System.out.println("Display all Movies");
+        System.out.println("exit");
+   }
 }

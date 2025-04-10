@@ -12,7 +12,26 @@ public class MovieCollection
     // adds a new movie to the movie collection
     public void addMovie(String title, int year, double rating)
     {
-        // Implement this method
+        movie newMovie= new Movie(title,year,rating);
+        if (movies.size() == 0 || (newMovie.getRating() >= movies.get(0).getRating()))
+        {
+            movies.add(0,newMovie);
+
+        }
+        else if (newMovie.getRating() < movies.get(movies.size()-1).getRating())
+        {
+            movies.add(newMovie);
+        }
+        else
+        {
+            for (int i = 0; i < movies.size()-1; i++)
+            {
+                if (newMovie.getRating() <= movies.get(i).getRating() && newMovie.getRating() > movies.get(i+1).getRating())
+                {
+                    movies.add(i, newMovie);
+                }
+            }
+        }
     }
 
     // removes a movie from the movie collection
