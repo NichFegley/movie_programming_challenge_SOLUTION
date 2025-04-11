@@ -1,3 +1,4 @@
+import java.util.*;
 public class MovieManager
 {
     /* The main method to control program.

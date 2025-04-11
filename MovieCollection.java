@@ -12,7 +12,7 @@ public class MovieCollection
     // adds a new movie to the movie collection
     public void addMovie(String title, int year, double rating)
     {
-        movie newMovie= new Movie(title,year,rating);
+        Movie newMovie = new Movie(title,year,rating);
         if (movies.size() == 0 || (newMovie.getRating() >= movies.get(0).getRating()))
         {
             movies.add(0,newMovie);
@@ -39,7 +39,15 @@ public class MovieCollection
     // return false if movie cannot be found
     public boolean removeMovie(String title)
     {
-        // Implement this method
+       
+       if (!movies.contains(title))
+            return false;
+       else {
+            movies.remove(title);
+            return true;
+       }
+        
+
     }
 
     // search for a movie
